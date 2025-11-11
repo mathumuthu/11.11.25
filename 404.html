@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 Error - Page Not Found</title>
+  <style>
+    :root {
+      --bg-light: #f4f4f9;
+      --text-light: #222;
+      --accent-light: #0078ff;
+      --bg-dark: #0d1117;
+      --text-dark: #e6edf3;
+      --accent-dark: #1f6feb;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.6s, color 0.6s;
+      background: var(--bg-light);
+      color: var(--text-light);
+      overflow: hidden;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .error {
+      font-size: 10rem;
+      font-weight: 800;
+      letter-spacing: 5px;
+      position: relative;
+      display: inline-block;
+      color: var(--accent-light);
+      animation: float 3s ease-in-out infinite;
+      transition: color 0.5s;
+    }
+
+    body.dark .error {
+      color: var(--accent-dark);
+    }
+
+    .error::before, .error::after {
+      content: '404';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      color: var(--accent-light);
+      opacity: 0.1;
+      filter: blur(15px);
+    }
+
+    .message {
+      font-size: 1.5rem;
+      margin-top: -10px;
+      animation: slideIn 2s ease;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      background: var(--accent-light);
+      color: white;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 0 15px rgba(0, 120, 255, 0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 120, 255, 0.7);
+    }
+
+    body.dark .btn {
+      background: var(--accent-dark);
+      box-shadow: 0 0 15px rgba(31, 111, 235, 0.4);
+    }
+
+    body.dark .btn:hover {
+      box-shadow: 0 0 25px rgba(31, 111, 235, 0.8);
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-mode:hover {
+      transform: rotate(180deg);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @media (max-width: 600px) {
+      .error { font-size: 6rem; }
+      .message { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" id="modeToggle">🌙</button>
+  <div class="container">
+    <h1 class="error">404</h1>
+    <p class="message">Oops! The page you’re looking for doesn’t exist.</p>
+    <button class="btn" onclick="window.location.href='index.html'">Go Home</button>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('modeToggle');
+    const body = document.body;
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>

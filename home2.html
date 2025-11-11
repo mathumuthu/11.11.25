@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+  
+  <script>
+    // Enable Tailwind dark mode
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            fade: 'fadeIn 1.5s ease-in-out',
+            float: 'float 3s ease-in-out infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+
+
+<body class="bg-white dark:bg-gray-500 text-gray-600 dark:text-gray-200 transition-colors duration-500"> 
+
+  <!-- Navbar -->
+   <!-- HEADER -->
+<header class="flex justify-between items-center px-6 py-3 shadow-lg bg-gray-100 dark:bg-gray-800 fixed top-0 left-0 right-0 z-50 transition-all duration-500 animate__animated animate__fadeInDown animate__faster">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <img src="img5.webp" width="40" alt="logo" class="animate__animated animate__pulse animate__infinite">
+    <h1 class="text-xl font-bold text-gray-800 dark:text-gray-100">
+      STACKLY<span class="text-blue-500"></span>
+    </h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="hidden md:flex gap-5 text-base font-semibold items-center relative">
+    <!-- Home Dropdown -->
+    <div class="relative group">
+      <button class="flex items-center gap-1 hover:text-blue-500 transition duration-300 dropdown-btn">
+        Home <i class="fa-solid fa-caret-down text-sm mt-1"></i>
+      </button>
+
+      <!-- Dropdown Menu -->
+     <div class="absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden animate__animated animate__fadeInUp animate__faster">
+        <!-- <a href="index.html" class="block px-5 py-2 hover:bg-blue-500 hover:text-white transition">Main Home</a> -->
+        <a href="index.html" class="block px-5 py-2 hover:bg-blue-500 hover:text-white transition">Homepage2</a>
+        <!-- <a href="testimonials.html" class="block px-5 py-2 hover:bg-blue-500 hover:text-white transition">Testimonials</a> -->
+        <!-- <a href="partners.html" class="block px-5 py-2 hover:bg-blue-500 hover:text-white transition">Partners</a> --> 
+      </div>
+    </div>
+
+    <a href="products.html" class="hover:text-blue-500 transition">Products</a>
+    <a href="steps.html" class="hover:text-blue-500 transition">Works</a>
+    <a href="comision.html" class="hover:text-blue-500 transition">Commissions</a>
+    <a href="contact2.html" class="hover:text-blue-500 transition">Contact</a>
+  </nav>
+
+  <!-- Dark Mode Button -->
+  <button id="theme-toggle" class="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition animate__animated animate__fadeIn animate__delay-1s">
+    🌙
+  </button>
+
+  <!-- Mobile Menu Icon -->
+  <button id="mobile-menu" class="md:hidden text-2xl text-blue-500 focus:outline-none animate__animated animate__fadeInRight">
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<!-- Mobile Dropdown Menu -->
+<nav id="mobile-nav" class="hidden flex-col bg-gray-100 dark:bg-gray-800 text-lg text-center py-3 shadow-lg md:hidden animate__animated animate__fadeInDown">
+  <a href="index.html" class="py-2 hover:text-blue-500">Home</a>
+  <a href="products.html" class="py-2 hover:text-blue-500">Products</a>
+  <a href="steps.html" class="py-2 hover:text-blue-500">Works</a>
+  <a href="comision.html" class="py-2 hover:text-blue-500">Commissions</a>
+  <a href="contact2.html" class="py-2 hover:text-blue-500">Contact</a>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-8 py-20">
+    <div class="max-w-lg space-y-6 animate-fade">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+        Grow Your Income with <span class="text-blue-500">Affiliate Marketing</span>
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-400">
+        Join thousands of marketers earning online. Track your sales, grow your reach, and enjoy lifetime commissions.
+      </p>
+       <a href="404.html" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-lg transition inline-block">
+   Get Started
+</a>
+
+    </div>
+    <img src="img8.webp"
+         alt="Affiliate marketing" class="w-full md:w-1/2 animate-float" />
+  </section>
+
+  <!-- Features -->
+  <section class="px-8 py-16 bg-gray-50 dark:bg-gray-800">
+    <h3 class="text-center text-3xl font-bold mb-10">Why Choose AffiliateHub?</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">💰 High Commission</h4>
+        <p>Earn up to 50% per sale with transparent real-time tracking.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">📈 Real-Time Dashboard</h4>
+        <p>Monitor your performance and get instant insights from our dashboard.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">⚡ Instant Payouts</h4>
+        <p>Get paid weekly or monthly directly to your wallet with no delays.</p>
+      </div>
+    </div>
+  </section>
+
+
+ <section class="px-8 py-16 bg-gray-50 dark:bg-gray-800">
+    <h3 class="text-center text-3xl font-bold mb-10">What is Affiliate Marketing?</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">💰 High profitable</h4>
+        <p>Earn up to 50% per sale with transparent real-time tracking.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">📈 Experiance</h4>
+        <p>Monitor your performance and get instant insights from our dashboard.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">⚡ No paylimits</h4>
+        <p>Get paid weekly or monthly directly to your wallet with no delays.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+ <section class="px-8 py-16 bg-gray-50 dark:bg-gray-800">
+    <h3 class="text-center text-3xl font-bold mb-10">How its work?</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">Join program</h4>
+        
+        <p>Earn up to 50% per sale with transparent real-time tracking.</p>
+       <!-- <img src="https://images.unsplash.com/photo-1507209696998-3c532be9b2b3" class="img-fluid rounded mb-3"> -->
+            <h5>Top 5 Affiliate Niches for 2025</h5>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">Promote products</h4>
+        <p>Monitor your performance and get instant insights from our dashboard.</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg text-center hover:scale-105 transition animate-fade">
+        <h4 class="text-xl font-semibold mb-3">Earn commissions</h4>
+        <p>Get paid weekly or monthly directly to your wallet with no delays.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Stay Updated -->
+  <section class="py-16 px-8 text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white animate-fade">
+    <h3 class="text-3xl font-semibold mb-4">Stay Updated</h3>
+    <p class="mb-6">Subscribe to get updates on new offers and affiliate programs.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+      <input type="email" id="emailInput" placeholder="Enter your email"
+             class="px-4 py-2 rounded-lg text-gray-800 outline-none w-full" />
+      <button onclick="subscribeEmail()" class="px-6 py-2 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100">
+        Subscribe
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+   <footer class="footer">
+  <div class="bubble-area">
+    <div class="bubbles"></div>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand animate-slide-up">
+      <h2>Affiliate<span>Stackly</span></h2>
+      <p>Maximize your earnings with AffiliateWave — your trusted marketing platform for performance and growth.</p>
+    </div>
+    <div class="footer-links animate-fade">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home2.html">Home</a></li>
+        <li><a href="steps.html">How It Works</a></li>
+        <li><a href="comision.html">Commissions</a></li>
+        <li><a href="testminals.html">Testimonials</a></li>
+        <!-- <li><a href="#">Partners</a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-subscribe animate-fade">
+      <h3>Stay Updated</h3>
+      <!-- <p>Subscribe to get affiliate marketing news & growth hacks.</p> -->
+      <div class="subscribe-box">
+        <input type="email" id="emailInput" placeholder="Enter your email">
+        <button id="subscribeBtn">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer-social animate-slide-up">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com › login"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="footer-container">
+    <div class="footer-brand animate-slide-up">
+      <h2>It Works<span>Stackly</span></h2>
+      <p> Affiliate marketing lets you earn a commission by promoting<br> products or services online. 
+        You promote, they buy — you earn! Simple, smart, and scalable.
+      </p>.</p>
+    </div>
+
+
+
+<div class="footer-container">
+    <div class="footer-brand animate-slide-up">
+      <h2>What is Affiliate <span>Marketing?</span></h2>
+      <p>Maximize your earnings with AffiliateWave <br>— your trusted marketing platform for performance and growth.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+  <div class="footer-bottom">
+    <p>© 2025 AffiliateWave. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <!-- Font Awesome & JS -->
+  <script src="https://kit.fontawesome.com/a2e0e6ad3c.js" crossorigin="anonymous"></script>
+  <script>
+    // Dark / Light Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    // Subscribe Email (Simple JS)
+    function subscribeEmail() {
+      const email = document.getElementById('emailInput').value;
+      if (email.trim() === '') {
+        alert('Please enter your email!');
+      } else {
+        alert(`Thanks for subscribing, ${email}!`);
+        document.getElementById('emailInput').value = '';
+      }
+    }
+  </script>
+  <style>.footer {
+  position: relative;
+  padding: 70px 20px 30px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #001f3f, #0a192f, #001f3f);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* FLOATING BUBBLES */
+.bubble-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  overflow: hidden;
+}
+.bubbles::before, .bubbles::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 20%, transparent 60%);
+  animation: moveBubbles 20s linear infinite;
+}
+@keyframes moveBubbles {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+/* FOOTER CONTENT */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-brand h2 {
+  color: #00eaff;
+  font-size: 28px;
+}
+.footer-brand span {
+  color: #ff6ec7;
+}
+.footer-brand p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* LINKS */
+.footer-links h3 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+.footer-links ul {
+  list-style: none;
+}
+.footer-links ul li {
+  margin: 8px 0;
+}
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer-links ul li a:hover {
+  color: #ff6ec7;
+  transform: translateX(5px);
+}
+
+/* SUBSCRIBE BOX */
+.footer-subscribe h3 {
+  color: #00eaff;
+}
+.subscribe-box {
+  margin-top: 10px;
+  display: flex;
+  
+}
+.subscribe-box input {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+}
+.subscribe-box button {
+  background: #00eaff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.4s ease;
+}
+.subscribe-box button:hover {
+  background: #ff6ec7;
+  color: #fff;
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 0 15px #ff6ec7;
+}
+
+/* SOCIAL ICONS */
+.footer-social h3 {
+  color: #00eaff;
+  margin-bottom: 10px;
+}
+.social-icons a {
+  color: #00eaff;
+  margin-right: 12px;
+  font-size: 22px;
+  transition: 0.4s ease;
+  display: inline-block;
+}
+.social-icons a:hover {
+  color: #ff6ec7;
+  transform: rotate(360deg) scale(1.2);
+  text-shadow: 0 0 10px #ff6ec7;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 2s ease;
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ANIMATIONS ON LOAD */
+.animate-slide-up {
+  animation: slideUp 1.8s ease forwards;
+  opacity: 0;
+}
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.animate-fade {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+  .footer-container {
+    text-align: center;
+  }
+  .subscribe-box {
+    flex-direction: column;
+  }
+  .subscribe-box input, .subscribe-box button {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+}
+
+/* --- MOBILE MEDIA QUERY --- */
+@media (max-width: 768px) {
+    /* Header/Nav Mobile Styling */
+    #main-nav {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Below the header */
+        left: 0;
+        background: #2c3e50;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    
+    #main-nav.active {
+        display: block;
+    }
+
+    #main-nav ul {
+        flex-direction: column;
+        border-top: 1px solid #4a637a;
+    }
+    #main-nav a {
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid #34495e;
+    }
+    #main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hero Section Mobile */
+    #home h1 {
+        font-size: 2.5em;
+    }
+    #home p {
+        font-size: 1.1em;
+    }
+    .hero-image {
+        max-width: 90%;
+    }
+
+    /* About Section Mobile */
+    .about-flex {
+        flex-direction: column;
+    }
+    .about-image {
+        order: -1; /* Image appears above text on mobile */
+    }
+
+    /* Testimonials Mobile */
+    .testimonial-item {
+        padding: 25px;
+    }
+    .testimonial-item p {
+        font-size: 1.1em;
+    }
+    .slider-nav {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+
+    /* Commission Table Mobile */
+    .commission-table, .commission-table thead, .commission-table tbody, .commission-table th, .commission-table td, .commission-table tr { 
+		display: block; /* Make table responsive by stacking */
+	}
+	.commission-table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.commission-table tr { border: 1px solid #ccc; margin-bottom: 15px; }
+	.commission-table td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; /* Space for pseudo-element labels */
+		text-align: right;
+	}
+	.commission-table td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align: left;
+		font-weight: bold;
+	}
+	/* Label the data */
+	.commission-table td:nth-of-type(1):before { content: "Level"; }
+	.commission-table td:nth-of-type(2):before { content: "Monthly Sales"; }
+	.commission-table td:nth-of-type(3):before { content: "Rate"; }
+	.commission-table td:nth-of-type(4):before { content: "Bonus"; }
+
+    /* Footer Mobile Styling */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .social-media {
+        border-top: 1px solid #4a637a;
+        border-bottom: 1px solid #4a637a;
+        padding: 20px 0;
+    }
+    .footer-column h3 {
+        margin-top: 30px; /* Add space between stacked sections */
+    }
+    .footer-column ul {
+        margin-bottom: 20px;
+    }
+}</style>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize AOS (Animate On Scroll) Library
+    AOS.init({
+        duration: 1000, // global duration of animation
+        once: true,     // whether animation should only happen once
+        offset: 120,    // offset (in px) from the top of the viewport
+        delay: 0,       // values from 0 to 3000, with step 50ms
+    });
+
+    // 2. Mobile Menu Toggle Functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        // Optional: Toggle icon (hamburger to X)
+        // menuToggle.innerHTML = mainNav.classList.contains('active') ? '&times;' : '&#9776;';
+    });
+
+    // Close the menu when a link is clicked (for single-page navigation)
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                // menuToggle.innerHTML = '&#9776;'; // Reset icon
+            }
+        });
+    });
+
+    // 3. Testimonial Slider Functionality
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const prevButton = document.querySelector('.slider-nav.prev');
+    const nextButton = document.querySelector('.slider-nav.next');
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+        testimonialItems.forEach((item, i) => {
+            item.classList.remove('active');
+            item.classList.remove('animate__animated', 'animate__bounceInLeft', 'animate__bounceInRight'); // Clear animation classes
+            if (i === index) {
+                item.classList.add('active');
+                // Re-add animation class for new item, direction based on navigation
+                if (prevButton.lastClick === true) { // Custom property added below
+                    item.querySelector('p').classList.add('animate__animated', 'animate__bounceInLeft');
+                } else {
+                    item.querySelector('p').classList.add('animate__animated', 'animate__bounceInRight');
+                }
+            }
+        });
+    }
+
+    function showNextTestimonial() {
+        prevButton.lastClick = false; // Set custom property for animation direction
+        currentIndex = (currentIndex + 1) % testimonialItems.length;
+        showTestimonial(currentIndex);
+    }
+
+    function showPrevTestimonial() {
+        prevButton.lastClick = true; // Set custom property for animation direction
+        currentIndex = (currentIndex - 1 + testimonialItems.length) % testimonialItems.length;
+        showTestimonial(currentIndex);
+    }
+
+    if (testimonialItems.length > 0) {
+        showTestimonial(currentIndex); // Show the first testimonial initially
+        prevButton.addEventListener('click', showPrevTestimonial);
+        nextButton.addEventListener('click', showNextTestimonial);
+
+        // Optional: Auto-rotate testimonials
+        // setInterval(showNextTestimonial, 7000); 
+    }
+});
+
+
+document.getElementById("subscribeBtn").addEventListener("click", function() {
+  const email = document.getElementById("emailInput").value.trim();
+
+  if (email === "") {
+    alert("Please enter your email to subscribe!");
+    return;
+  }
+
+  const btn = this;
+  btn.innerText = "Subscribing...";
+  btn.style.background = "#ff6ec7";
+  btn.style.boxShadow = "0 0 15px #ff6ec7";
+
+  setTimeout(() => {
+    btn.innerText = "Subscribed!";
+    btn.style.background = "#00eaff";
+    btn.style.boxShadow = "0 0 15px #00eaff";
+    document.getElementById("emailInput").value = "";
+  }, 1500);
+});
+
+  // Dark / Light Mode Toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  });
+
+  // Mobile Menu Toggle
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNav = document.getElementById('mobile-nav');
+  mobileMenu.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+    mobileNav.classList.add('animate__fadeInDown');
+  });
+
+
+</script>
+</body>
+</html>

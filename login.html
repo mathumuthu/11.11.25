@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affiliate Marketing | Stackly</title>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      overflow: hidden;
+      transition: background 0.6s ease;
+    }
+
+    body.dark {
+      background: linear-gradient(135deg, #111, #222);
+    }
+
+    .container {
+      width: 380px;
+      height: 500px;
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+
+    .container.active .card {
+      transform: rotateY(180deg);
+    }
+
+    .form-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 1s ease;
+    }
+
+    body.dark .form-box {
+      background: #1e1e1e;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    body.dark .form-box h2 {
+      color: #fff;
+    }
+
+    .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #0c1c30;
+  animation: float 2s infinite ease-in-out;
+}
+
+.logo img {
+  display: inline-block;
+}
+
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .input-box input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 10px rgba(37, 117, 252, 0.3);
+    }
+
+    body.dark .input-box input {
+      background: #333;
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(37, 117, 252, 0.4);
+    }
+
+    .toggle-text {
+      text-align: center;
+      margin-top: 1rem;
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    .toggle-text span {
+      color: #2575fc;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .toggle-text span:hover {
+      text-decoration: underline;
+    }
+
+    body.dark .toggle-text {
+      color: #ccc;
+    }
+
+    /* Signup Form */
+    .signup-box {
+      transform: rotateY(180deg);
+    }
+
+    /* Floating bubbles */
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .bubbles span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      bottom: -50px;
+      border-radius: 50%;
+      animation: rise 8s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(0.5); opacity: 0; }
+    }
+
+    .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; width: 15px; height: 15px; }
+    .bubbles span:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .bubbles span:nth-child(3) { left: 50%; animation-delay: 4s; width: 25px; height: 25px; }
+    .bubbles span:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .bubbles span:nth-child(5) { left: 90%; animation-delay: 3s; width: 10px; height: 10px; }
+
+    /* Dark/Light Mode Toggle Button */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #2575fc;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    body.dark .theme-toggle {
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    @media (max-width: 480px) {
+      .container { width: 90%; height: 520px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+
+  <div class="container" id="container">
+    <div class="card">
+      <!-- Login Form -->
+      <div class="form-box login-box">
+        <div class="logo"> <img src="img5.webp" width="40px" alt="">STACKLY</div>
+        <h2> Login</h2>
+        <div class="input-box">
+          <input type="email" placeholder="Email Address" required />
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" required />
+        </div>
+        <button class="btn" id="loginBtn">Login</button>
+        <div class="toggle-text">
+          Don’t have an account? <span id="signupBtn">Sign up</span>
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="form-box signup-box">
+        <div class="logo"> <img src="img5.webp" width="40px" alt="">STACKLY</div>
+        <h2>Signup</h2>
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" required />
+        </div>
+        <div class="input-box">
+          <input type="email" placeholder="Email Address" required />
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Create Password" required />
+        </div>
+        <button class="btn" id="signupSubmit">Sign Up</button>
+        <div class="toggle-text">
+          Already have an account? <span id="loginToggle">Login</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById("container");
+    const signupBtn = document.getElementById("signupBtn");
+    const loginToggle = document.getElementById("loginToggle");
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Flip animation toggle
+    signupBtn.addEventListener("click", () => {
+      container.classList.add("active");
+    });
+
+    loginToggle.addEventListener("click", () => {
+      container.classList.remove("active");
+    });
+
+    // Dark/Light Mode Toggle
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        themeToggle.textContent = "☀️ Light";
+      } else {
+        themeToggle.textContent = "🌙 Dark";
+      }
+    });
+
+    // Login button animation
+    document.getElementById("loginBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Login successful! Welcome.");
+    });
+
+    // Signup button animation
+    document.getElementById("signupSubmit").addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Signup successful! Welcome .");
+    });
+  </script>
+</body>
+</html>
