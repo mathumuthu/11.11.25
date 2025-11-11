@@ -52,7 +52,7 @@
                     <li><a href="comision.html">Commissions</a></li>
                     <li><a href="contact2.html">Contact</a></li>
                     <li><a href="login.html">Login</a></li>
-    ...
+    
   </ul>
 </nav>
 
@@ -466,6 +466,7 @@ h1, h2, h3 {
     height: auto;
     display: block;
 }
+html, body { overflow-x: hidden; }
 
 .feature-grid {
     display: grid;
@@ -909,6 +910,16 @@ h1, h2, h3 {
     border-radius: 4px;
     margin-bottom: 8px;
   }
+}
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ensure images and other elements scale */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
 }
 
 /* --- MOBILE MEDIA QUERY --- */

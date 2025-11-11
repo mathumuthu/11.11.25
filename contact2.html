@@ -63,6 +63,17 @@
     input:focus,textarea:focus{box-shadow:0 6px 24px rgba(99,102,241,0.06);border-color:rgba(99,102,241,0.6)}
 
     @media (max-width:480px){h1{font-size:22px}.brand .logo{font-size:18px}}
+    /* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ensure images and other elements scale */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
   </style>
 </head>
 <body>

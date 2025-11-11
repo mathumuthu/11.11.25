@@ -253,6 +253,17 @@
     .carousel { padding:10px 0; }
     .track { gap:12px; }
   }
+  /* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ensure images and other elements scale */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
 </style>
 </head>
 <body data-theme="dark">

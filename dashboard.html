@@ -41,6 +41,17 @@
   color: var(--muted);
   margin-top: 2px;
 }
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ensure images and other elements scale */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
 
   /* Layout */
   html,body{height:100%;margin:0;background:linear-gradient(180deg,#071026 0%, #071a2b 100%); color:#e6eef8;}

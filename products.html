@@ -17,7 +17,17 @@
       color: white;
       transition: background 0.5s, color 0.5s;
       overflow-x: hidden;
-    }
+    }/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Ensure images and other elements scale */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
 
     /* Header */
     header {
@@ -215,23 +225,37 @@
         padding: 40px 20px;
       }
     }
+    header h1.logo {
+  display: flex;
+  align-items: center;  /* vertically center image and text */
+  gap: 10px;            /* space between logo and text */
+  color: #00bfff;
+  font-size: 1.8rem;
+}
+
+header h1.logo img {
+  display: block;       /* removes small extra space below image */
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1> <img src="img5.webp" width="45px" alt="">Stackly </h1>
-    <nav>
-      <ul>
-        <li><a href="home2.html">Home</a></li>
-        <!-- <li><a href="products.html">Products</a></li> -->
-        <li><a href="comision.html">Commission</a></li>
-        <li><a href="steps.html">Steps</a></li>
+ <header>
+  <h1 class="logo">
+    <img src="img5.webp" width="45" alt="Logo">
+    <span>Stackly</span>
+  </h1>
+  <nav>
+    <ul>
+      <li><a href="home2.html">Home</a></li>
+      <li><a href="comision.html">Commission</a></li>
+      <li><a href="steps.html">Steps</a></li>
+      <li><a href="contact2.html">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- <button class="toggle-btn" onclick="toggleMode()">🌙</button> -->
+</header>
 
-        <li><a href="contact2.html">Contact</a></li>
-      </ul>
-    </nav>
-    <!-- <button class="toggle-btn" onclick="toggleMode()">🌙</button> -->
-  </header>
 
   <section class="products">
     <div class="product">
